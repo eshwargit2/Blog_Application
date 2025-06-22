@@ -24,7 +24,7 @@ export default function Home() {
         <input type="text" className="px-4 py-2 border border-gray-300 rounded-md" placeholder="Search..." />
         <button className="px-4 py-2 bg-blue-500 text-white rounded-md ml-4">Search</button>
       </div> 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 mt-3 sm:grid-cols-2 lg:grid-cols-3 gap-4">
        {post.map((post)=>(
       <Link href={"/post/"+post._id} >  
        <div className="border border-gray-200 p-4">

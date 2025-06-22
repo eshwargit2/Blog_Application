@@ -16,7 +16,6 @@ const page = ({params}) => {
 
 
 
-
   return (
     <div>
         {post &&
