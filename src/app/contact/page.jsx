@@ -7,14 +7,24 @@ const page = () => {
 
 
   const [inputs, setInputs]=useState("");
+  const [messsge, setMessage]=useState("");
 
 
   const handleInput=(e)=>{
            setInputs((state)=> {return {...state,[e.target.name]:e.target.value}})
   }
 
-  const handleSubmit=()=>{
-
+  const handleSubmit=(e)=>{
+        e.preventDefault();
+      fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/enquary`,{
+        method:'POST',
+        body:JSON.stringify(inputs)
+      })
+      .then((res)=>res.json())
+      .then((res)=>{
+          setMessage(res.message);
+          setInputs({})
+      })
   }
 
 
