@@ -4,10 +4,20 @@ import postModel from "../../../../models/postModal"
 export async function GET(req){
 
    const quary =  req.nextUrl.searchParams.get('q')
-   console.log(quary,'quary')
+
     try{
         await connectMongo();
-        const postData = await postModel.find({});
+        let postData;
+        if(quary){
+                postData = await postModel.find({
+                $or:[
+                    {title:new RegExp(quary, 'i')},
+                    {description:new RegExp(quary, 'i')}, 
+                ]
+               });
+        }else{
+            postData = await postModel.find({});
+        }
         return  Response.json(postData)  
     }catch(error){
         return Response.json({
