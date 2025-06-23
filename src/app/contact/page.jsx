@@ -13,13 +13,16 @@ const page = () => {
            setInputs((state)=> {return {...state,[e.target.name]:e.target.value}})
   }
 
+  const handleSubmit=()=>{
+
+  }
 
 
   return (
     <div>
       <main className="container mx-auto px-4 py-6">
         <h2 className="text-4xl font-bold mb-4">Contact Us</h2>
-        <form className="w-full max-w-lg">
+        <form onSubmit={handleSubmit} className="w-full max-w-lg">
             <div className="flex items-center mb-4">
                 <label htmlFor="name" className="w-1/4">Name:</label>
                 <input type="text" id="name" name='name' onChange={handleInput} value={inputs.name??""} className="border rounded px-2 py-1 w-3/4"/>
