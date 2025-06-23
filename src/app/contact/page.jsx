@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { useState } from 'react'
+import { setTimeout } from 'timers';
 
 const page = () => {
 
@@ -24,7 +25,11 @@ const page = () => {
       .then((res)=>{
           setMessage(res.message);
           setInputs({})
+          setTimeout(()=>{
+            setMessage("")
+          },3000)
       })
+
   }
 
 
