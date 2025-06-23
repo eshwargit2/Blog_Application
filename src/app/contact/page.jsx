@@ -10,7 +10,7 @@ const page = () => {
 
 
   const handleInput=(e)=>{
-           setInputs()
+           setInputs((state)=> {})
   }
 
 
