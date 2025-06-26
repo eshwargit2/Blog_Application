@@ -1,6 +1,7 @@
 import connectMongo  from "../../../../../utils/connectMongo";
 import postModel from "../../../../../models/postModal"
 
+
 export async function GET(req, {params}){
     try{
         console.log(params);
